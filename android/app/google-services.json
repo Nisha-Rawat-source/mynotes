@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "49724108296",
+    "project_id": "mynotes-da5cc",
+    "storage_bucket": "mynotes-da5cc.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:49724108296:android:1b9f5dea2a87ae8bcfebbd",
+        "android_client_info": {
+          "package_name": "com.hinglajma.mynotes"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBnc8dwiYCMHh7e5L47wGCfY5qaMG5Xv1Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
