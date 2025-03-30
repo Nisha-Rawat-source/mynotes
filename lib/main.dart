@@ -5,7 +5,7 @@ import 'package:mynotes/firebase_options.dart';
 import 'package:mynotes/views/login_view.dart';
 import 'package:mynotes/views/register_view.dart';
 import 'package:mynotes/views/verify_email_view.dart';
-import 'dart:developer' as devTools show log;
+import 'dart:developer' as devtools show log;
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -20,6 +20,7 @@ void main() {
       routes: {
         '/login/': (context) => LoginView(),
         '/register': (context) => RegisterView(),
+        '/notes/': (context) => NotesView(),
       },
     ),
   );
@@ -41,7 +42,7 @@ class HomePage extends StatelessWidget {
 
             if (user != null) {
               if (user.emailVerified) {
-                print('email is verified');
+                devtools.log('email is verified');
                 return NotesView();
               } else {
                 return const EmailVerificationView();
