@@ -2,6 +2,7 @@ C/C++ Structured LogV
 T
 RC:\flutterdev\flutter\packages\flutter_tools\gradle\src\main\groovy\CMakeLists.txtC
 A
+<<<<<<< HEAD
 ?com.android.build.gradle.internal.cxx.io.EncodedFileFingerPrint	¿ƒÐ©à2§ îÛÞƒ×2\
 Z
 XC:\hinglajma\mynotes\android\app\.cxx\Debug\495g2510\x86_64\additional_project_files.txt	ÀƒÐ©à2 ”ÀÝý×2Y
@@ -26,3 +27,29 @@ P
 NC:\hinglajma\mynotes\android\app\.cxx\Debug\495g2510\x86_64\prefab_config.json	ÀƒÐ©à2( ¿ÀÝý×2W
 U
 SC:\hinglajma\mynotes\android\app\.cxx\Debug\495g2510\x86_64\symbol_folder_index.txt	ÀƒÐ©à2J ÄÀÝý×2
+=======
+?com.android.build.gradle.internal.cxx.io.EncodedFileFingerPrint	¶Ð‡ß2§ îÛÞƒ×2\
+Z
+XC:\hinglajma\mynotes\android\app\.cxx\Debug\495g2510\x86_64\additional_project_files.txt	·Ð‡ß2 ”ÀÝý×2Y
+W
+UC:\hinglajma\mynotes\android\app\.cxx\Debug\495g2510\x86_64\android_gradle_build.json	·Ð‡ß2’ ¥ÀÝý×2^
+\
+ZC:\hinglajma\mynotes\android\app\.cxx\Debug\495g2510\x86_64\android_gradle_build_mini.json	·Ð‡ß2ï µÀÝý×2K
+I
+GC:\hinglajma\mynotes\android\app\.cxx\Debug\495g2510\x86_64\build.ninja	·Ð‡ß2”Ò •ºÝý×2O
+M
+KC:\hinglajma\mynotes\android\app\.cxx\Debug\495g2510\x86_64\build.ninja.txt	·Ð‡ß2T
+R
+PC:\hinglajma\mynotes\android\app\.cxx\Debug\495g2510\x86_64\build_file_index.txt	·Ð‡ß2R ÇÀÝý×2U
+S
+QC:\hinglajma\mynotes\android\app\.cxx\Debug\495g2510\x86_64\compile_commands.json	·Ð‡ß2	Y
+W
+UC:\hinglajma\mynotes\android\app\.cxx\Debug\495g2510\x86_64\compile_commands.json.bin	·Ð‡ß2
+_
+]
+[C:\hinglajma\mynotes\android\app\.cxx\Debug\495g2510\x86_64\metadata_generation_command.txt	·Ð‡ß2“ ¹ÀÝý×2R
+P
+NC:\hinglajma\mynotes\android\app\.cxx\Debug\495g2510\x86_64\prefab_config.json	·Ð‡ß2( ¿ÀÝý×2W
+U
+SC:\hinglajma\mynotes\android\app\.cxx\Debug\495g2510\x86_64\symbol_folder_index.txt	·Ð‡ß2J ÄÀÝý×2
+>>>>>>> 66f178565869736f595b43c62ffa5abc4d59f921
