@@ -2,54 +2,27 @@ C/C++ Structured LogV
 T
 RC:\flutterdev\flutter\packages\flutter_tools\gradle\src\main\groovy\CMakeLists.txtC
 A
-<<<<<<< HEAD
-?com.android.build.gradle.internal.cxx.io.EncodedFileFingerPrint	øÉ–©‡2ß Ó€ﬁÉ◊2\
+?com.android.build.gradle.internal.cxx.io.EncodedFileFingerPrint	™»≥‹·2ß Ó€ﬁÉ◊2\
 Z
-XC:\hinglajma\mynotes\android\app\.cxx\Debug\495g2510\x86_64\additional_project_files.txt	¿É–©‡2 î¿›˝◊2Y
+XC:\hinglajma\mynotes\android\app\.cxx\Debug\495g2510\x86_64\additional_project_files.txt	™»≥‹·2 ãﬂ•¥·2Y
 W
-UC:\hinglajma\mynotes\android\app\.cxx\Debug\495g2510\x86_64\android_gradle_build.json	¿É–©‡2í •¿›˝◊2^
+UC:\hinglajma\mynotes\android\app\.cxx\Debug\495g2510\x86_64\android_gradle_build.json	™»≥‹·2í ôﬂ•¥·2^
 \
-ZC:\hinglajma\mynotes\android\app\.cxx\Debug\495g2510\x86_64\android_gradle_build_mini.json	¿É–©‡2Ô µ¿›˝◊2K
+ZC:\hinglajma\mynotes\android\app\.cxx\Debug\495g2510\x86_64\android_gradle_build_mini.json	™»≥‹·2Ô §ﬂ•¥·2K
 I
-GC:\hinglajma\mynotes\android\app\.cxx\Debug\495g2510\x86_64\build.ninja	¿É–©‡2î“ ï∫›˝◊2O
+GC:\hinglajma\mynotes\android\app\.cxx\Debug\495g2510\x86_64\build.ninja	™»≥‹·2î“ ¯€•¥·2O
 M
-KC:\hinglajma\mynotes\android\app\.cxx\Debug\495g2510\x86_64\build.ninja.txt	¿É–©‡2T
+KC:\hinglajma\mynotes\android\app\.cxx\Debug\495g2510\x86_64\build.ninja.txt	≠»≥‹·2T
 R
-PC:\hinglajma\mynotes\android\app\.cxx\Debug\495g2510\x86_64\build_file_index.txt	¿É–©‡2R «¿›˝◊2U
+PC:\hinglajma\mynotes\android\app\.cxx\Debug\495g2510\x86_64\build_file_index.txt	≠»≥‹·2R ∞ﬂ•¥·2U
 S
-QC:\hinglajma\mynotes\android\app\.cxx\Debug\495g2510\x86_64\compile_commands.json	¿É–©‡2	Y
+QC:\hinglajma\mynotes\android\app\.cxx\Debug\495g2510\x86_64\compile_commands.json	≠»≥‹·2	Y
 W
-UC:\hinglajma\mynotes\android\app\.cxx\Debug\495g2510\x86_64\compile_commands.json.bin	¿É–©‡2
+UC:\hinglajma\mynotes\android\app\.cxx\Debug\495g2510\x86_64\compile_commands.json.bin	≠»≥‹·2
 _
 ]
-[C:\hinglajma\mynotes\android\app\.cxx\Debug\495g2510\x86_64\metadata_generation_command.txt	¿É–©‡2ì π¿›˝◊2R
+[C:\hinglajma\mynotes\android\app\.cxx\Debug\495g2510\x86_64\metadata_generation_command.txt	≠»≥‹·2ì ßﬂ•¥·2R
 P
-NC:\hinglajma\mynotes\android\app\.cxx\Debug\495g2510\x86_64\prefab_config.json	¿É–©‡2( ø¿›˝◊2W
+NC:\hinglajma\mynotes\android\app\.cxx\Debug\495g2510\x86_64\prefab_config.json	≠»≥‹·2( ™ﬂ•¥·2W
 U
-SC:\hinglajma\mynotes\android\app\.cxx\Debug\495g2510\x86_64\symbol_folder_index.txt	¿É–©‡2J ƒ¿›˝◊2
-=======
-?com.android.build.gradle.internal.cxx.io.EncodedFileFingerPrint	∂–áêﬂ2ß Ó€ﬁÉ◊2\
-Z
-XC:\hinglajma\mynotes\android\app\.cxx\Debug\495g2510\x86_64\additional_project_files.txt	∑–áêﬂ2 î¿›˝◊2Y
-W
-UC:\hinglajma\mynotes\android\app\.cxx\Debug\495g2510\x86_64\android_gradle_build.json	∑–áêﬂ2í •¿›˝◊2^
-\
-ZC:\hinglajma\mynotes\android\app\.cxx\Debug\495g2510\x86_64\android_gradle_build_mini.json	∑–áêﬂ2Ô µ¿›˝◊2K
-I
-GC:\hinglajma\mynotes\android\app\.cxx\Debug\495g2510\x86_64\build.ninja	∑–áêﬂ2î“ ï∫›˝◊2O
-M
-KC:\hinglajma\mynotes\android\app\.cxx\Debug\495g2510\x86_64\build.ninja.txt	∑–áêﬂ2T
-R
-PC:\hinglajma\mynotes\android\app\.cxx\Debug\495g2510\x86_64\build_file_index.txt	∑–áêﬂ2R «¿›˝◊2U
-S
-QC:\hinglajma\mynotes\android\app\.cxx\Debug\495g2510\x86_64\compile_commands.json	∑–áêﬂ2	Y
-W
-UC:\hinglajma\mynotes\android\app\.cxx\Debug\495g2510\x86_64\compile_commands.json.bin	∑–áêﬂ2
-_
-]
-[C:\hinglajma\mynotes\android\app\.cxx\Debug\495g2510\x86_64\metadata_generation_command.txt	∑–áêﬂ2ì π¿›˝◊2R
-P
-NC:\hinglajma\mynotes\android\app\.cxx\Debug\495g2510\x86_64\prefab_config.json	∑–áêﬂ2( ø¿›˝◊2W
-U
-SC:\hinglajma\mynotes\android\app\.cxx\Debug\495g2510\x86_64\symbol_folder_index.txt	∑–áêﬂ2J ƒ¿›˝◊2
->>>>>>> 66f178565869736f595b43c62ffa5abc4d59f921
+SC:\hinglajma\mynotes\android\app\.cxx\Debug\495g2510\x86_64\symbol_folder_index.txt	≠»≥‹·2J Æﬂ•¥·2

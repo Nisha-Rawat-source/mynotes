@@ -85,5 +85,4 @@ class DefaultFirebaseOptions {
     storageBucket: 'mynotes-da5cc.firebasestorage.app',
     measurementId: 'G-9ZJBD23M5H',
   );
-
 }
