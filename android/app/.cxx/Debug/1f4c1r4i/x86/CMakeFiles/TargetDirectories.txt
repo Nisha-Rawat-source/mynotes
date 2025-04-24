@@ -1,0 +1,2 @@
+C:/hinglajma/mynotes/android/app/.cxx/Debug/1f4c1r4i/x86/CMakeFiles/edit_cache.dir
+C:/hinglajma/mynotes/android/app/.cxx/Debug/1f4c1r4i/x86/CMakeFiles/rebuild_cache.dir
