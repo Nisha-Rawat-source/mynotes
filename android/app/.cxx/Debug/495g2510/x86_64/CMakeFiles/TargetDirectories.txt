@@ -1,2 +1,0 @@
-C:/hinglajma/mynotes/android/app/.cxx/Debug/495g2510/x86_64/CMakeFiles/edit_cache.dir
-C:/hinglajma/mynotes/android/app/.cxx/Debug/495g2510/x86_64/CMakeFiles/rebuild_cache.dir

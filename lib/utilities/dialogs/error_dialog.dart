@@ -9,6 +9,8 @@ Future<void> showErrorDialog(
     context: context,
     title: 'An error occured',
     content: text,
+
+    /*option builder is deffined for generic dialog for button creation*/
     optionBulider: () => {
       'OK': null,
     },

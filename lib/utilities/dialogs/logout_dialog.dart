@@ -14,3 +14,4 @@ Future<bool> showLogOutDialog(BuildContext context) {
     (value) => value ?? false,
   );
 }
+//explore more about dialog

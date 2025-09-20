@@ -12,7 +12,7 @@ class RegisterView extends StatefulWidget {
 }
 
 class _RegisterViewState extends State<RegisterView> {
-  late final TextEditingController _email;
+  late final TextEditingController _email;//late an agreement we will always provide a value in future
   late final TextEditingController _password;
 
   @override

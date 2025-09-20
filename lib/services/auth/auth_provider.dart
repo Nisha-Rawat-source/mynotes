@@ -19,3 +19,16 @@ abstract class AuthProvider {
 
   Future<void> sendEmailVerification();
 }
+/*Here’s what happens step by step:
+
+authprovider is just a blueprint how otherclass must have its functionalities
+
+AuthService receives the call.
+
+AuthService sends the request to FirebaseAuthProvider.
+
+FirebaseAuthProvider talks to Firebase.
+
+Result (success/failure) comes back to AuthService.
+
+AuthService returns it to the UI. */
