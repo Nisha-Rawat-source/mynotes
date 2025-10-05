@@ -24,6 +24,22 @@ void main() {
         useMaterial3: true,
       ),
       debugShowCheckedModeBanner: false,
+
+      /*bloc provider is creating and managing the instance of bloc here it is 
+      creating or giving context the address or access to our bloc which takes
+      firebaseAuthProvider as parameter or constructor and these context or bloc 
+      provider or context is applicable on its chile homepage
+      /*
+BlocProvider here is creating and managing the instance of AuthBloc. 
+It takes FirebaseAuthProvider as a dependency for AuthBloc. 
+BlocProvider makes this AuthBloc accessible to all child widgets 
+(e.g., HomePage and its children) through the context, 
+so they can read or listen to its states and send events.
+*/
+ */
+
+//now authbloc is injected in context
+
       home: BlocProvider<AuthBloc>(
         create: (context) => AuthBloc(FirebaseAuthProvider()),
         child: const HomePage(),
@@ -45,7 +61,14 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    //sending bloc a event of AuthEventInitiatize
+
+    /*context is given .read authbloc from context and in that authbloc 
+    .add(way of communicating with your bloc) this */
     context.read<AuthBloc>().add(const AuthEventInitiatize());
+
+    /*BlocBuilder building the ui according to the bloc and bloc(BLoC type and state type specified.) 
+    state given in the parameter and bulding it for given contect and state */
     return BlocBuilder<AuthBloc, AuthState>(
       builder: (context, state) {
         if (state is AuthStateLoggedIn) {

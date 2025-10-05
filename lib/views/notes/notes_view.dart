@@ -67,6 +67,7 @@ public methods. */
                 case MenuAction.logout:
                   final shouldLogOut = await showLogOutDialog(context);
                   if (shouldLogOut) {
+                    //sending event AuthEventLogOut to AuthBloc
                     context.read<AuthBloc>().add(
                           const AuthEventLogOut(),
                         );
@@ -93,12 +94,12 @@ public methods. */
         builder: (context, snapshot) {
           switch (snapshot.connectionState) {
             //implecite fall through writing cases one after other meaning one case have no knowledge and that fall through to other case
-            case ConnectionState
-                  .waiting: //command click it is saying waiting for a note to we created
-            case ConnectionState
-                  .active: //it is when atleast one value or note is returned and waiting for others
-              if (snapshot
-                  .hasData) //snapshot.hasData is property of snapshot which tells wheither it have data or not in this snapshot it is talking about streams builders allnotes
+            case ConnectionState.waiting:
+            //command click it is saying waiting for a note to we created
+            case ConnectionState.active:
+              //it is when atleast one value or note is returned and waiting for others
+              if (snapshot.hasData)
+              //snapshot.hasData is property of snapshot which tells wheither it have data or not in this snapshot it is talking about streams builders allnotes
               {
                 //final allNotes = snapshot.data as List<DatabaseNote>;
                 final allNotes = snapshot.data as Iterable<CloudNote>;
