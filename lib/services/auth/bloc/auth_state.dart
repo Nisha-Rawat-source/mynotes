@@ -1,3 +1,4 @@
+import 'package:equatable/equatable.dart';
 import 'package:flutter/cupertino.dart' show immutable;
 import 'package:mynotes/services/auth/auth_user.dart';
 
@@ -12,11 +13,13 @@ abstract class AuthState {
   const AuthState();
 }
 
-/*this is generic loading class if it does not exist the we have to make it separatly
-for every state for instance logingin , logingout etc*/
+class AuthStateUninitialized extends AuthState {
+  const AuthStateUninitialized();
+}
 
-class AuthStateLoading extends AuthState {
-  const AuthStateLoading();
+class AuthStateRegistering extends AuthState {
+  final Exception? exception;
+  const AuthStateRegistering(this.exception);
 }
 
 class AuthStateLoggedIn extends AuthState {
@@ -28,12 +31,26 @@ class AuthStateNeedsVerification extends AuthState {
   const AuthStateNeedsVerification();
 }
 
-class AuthStateLoggedOut extends AuthState {
-  final Exception? exception;
-  const AuthStateLoggedOut(this.exception);
-}
+/*with is used to add extra features or behavior to a class without inheritance.
+It allows a class to use another class’s methods or properties — this is called a mixin.
+with is used to include the code from another class (called a mixin) into your current class. 
+extends AuthState → means this class is a child of AuthState.
+with EquatableMixin → means it also borrows features from EquatableMixin.*/
 
-class AuthStateLogoutFailure extends AuthState {
-  final Exception exception;
-  const AuthStateLogoutFailure(this.exception);
+class AuthStateLoggedOut extends AuthState with EquatableMixin {
+  final Exception? exception;
+  final bool isLoading;
+  const AuthStateLoggedOut({
+    required this.exception,
+    required this.isLoading,
+  });
+
+  /*we need equality here which we are using through equatable we need equality
+here because this class can produce instances which have diff meaning
+for eg: exception=null with isloading :true(if cant login produce exception),
+exception=something with isloading :false exception=null with isloading :true 
+(if cant login produce diff state) so we need to differentiate these states*/
+
+  @override
+  List<Object?> get props => [exception, isLoading];
 }

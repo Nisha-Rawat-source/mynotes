@@ -46,10 +46,6 @@ so they can read or listen to its states and send events.
       ),
       routes: {
         //route is a parameter or argumment which takes vale in map formate where key is string and value is function of build context
-        loginRoute: (context) => const LoginView(),
-        registerRoute: (context) => const RegisterView(),
-        notesRoutes: (context) => const NotesView(),
-        verifyEmailRoute: (context) => const EmailVerificationView(),
         createOrUpdateNoteRoute: (context) => const CreateUpdateNoteView(),
       },
     ),
@@ -77,6 +73,8 @@ class HomePage extends StatelessWidget {
           return const EmailVerificationView();
         } else if (state is AuthStateLoggedOut) {
           return LoginView();
+        } else if (state is AuthStateRegistering) {
+          return const RegisterView();
         } else {
           return const Scaffold(
             body: CircularProgressIndicator(),
