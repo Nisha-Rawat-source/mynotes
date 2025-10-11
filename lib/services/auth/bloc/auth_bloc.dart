@@ -7,7 +7,8 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   /*we are taking auth provider becase our authservice is doing the same whcih is our bussinesslogic
   -super(const AuthStateLoading()) alway have initial state in this code our initial state is AuthStateLoading
   */
-  AuthBloc(AuthProvider provider) : super(const AuthStateUninitialized()) {
+  AuthBloc(AuthProvider provider)
+      : super(const AuthStateUninitialized(isLoading: true)) {
     /*event is the instance of the event class that triggered this handler.
     In your case, AuthEventInitiatize() */
 
@@ -25,9 +26,18 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
           password: password,
         );
         await provider.sendEmailVerification();
-        emit(const AuthStateNeedsVerification());
+        emit(
+          const AuthStateNeedsVerification(
+            isLoading: false,
+          ),
+        );
       } on Exception catch (e) {
-        emit(AuthStateRegistering(e));
+        emit(
+          AuthStateRegistering(
+            exception: e,
+            isLoading: false,
+          ),
+        );
       }
     });
 
@@ -43,9 +53,12 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
           ),
         );
       } else if (!user.isEmailVerified) {
-        emit(const AuthStateNeedsVerification());
+        emit(const AuthStateNeedsVerification(isLoading: false));
       } else {
-        emit(AuthStateLoggedIn(user));
+        emit(AuthStateLoggedIn(
+          user: user,
+          isLoading: false,
+        ));
       }
     });
 
@@ -54,6 +67,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         const AuthStateLoggedOut(
           exception: null,
           isLoading: true,
+          loadingText: 'please wait while i log you in',
         ),
       );
 
@@ -74,7 +88,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
             ),
           );
 
-          emit(const AuthStateNeedsVerification());
+          emit(const AuthStateNeedsVerification(isLoading: false));
         } else {
           emit(
             const AuthStateLoggedOut(
@@ -82,7 +96,10 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
               isLoading: false,
             ),
           );
-          emit(AuthStateLoggedIn(user));
+          emit(AuthStateLoggedIn(
+            user: user,
+            isLoading: false,
+          ));
         }
       } on Exception catch (e) {
         emit(

@@ -9,11 +9,13 @@ import 'package:firebase_auth/firebase_auth.dart'
 
 class FirebaseAuthProvider implements AuthProvider {
   @override
-  AuthUser? get currentUser {//this is a getter which is geting user from firebase then authuser is creating user using this with factoru constructor
+  AuthUser? get currentUser {
+    //this is a getter which is geting user from firebase then authuser is creating user using this with factoru constructor
     final user = FirebaseAuth.instance.currentUser;
 
     if (user != null) {
-      return AuthUser.fromFirebase(user);//here currebt user is getting return by authuser
+      return AuthUser.fromFirebase(
+          user); //here currebt user is getting return by authuser
     } else {
       return null;
     }
