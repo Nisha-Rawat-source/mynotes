@@ -18,6 +18,9 @@ abstract class AuthState {
   });
 }
 
+/*super() means that the child class is calling the constructor of its parent 
+class (in this case, AuthState). */
+
 class AuthStateUninitialized extends AuthState {
   const AuthStateUninitialized({required bool isLoading})
       : super(isLoading: isLoading);
@@ -25,8 +28,21 @@ class AuthStateUninitialized extends AuthState {
 
 class AuthStateRegistering extends AuthState {
   final Exception? exception;
-  const AuthStateRegistering({required this.exception, required isLoading})
-      : super(isLoading: isLoading);
+  const AuthStateRegistering({
+    required this.exception,
+    required isLoading,
+  }) : super(isLoading: isLoading);
+}
+
+class AuthStateForgotPassword extends AuthState {
+  final Exception? exception;
+  final bool hasSentEmail;
+
+  const AuthStateForgotPassword({
+    required this.exception,
+    required this.hasSentEmail,
+    required bool isLoading,
+  }) : super(isLoading: isLoading);
 }
 
 class AuthStateLoggedIn extends AuthState {
@@ -55,6 +71,8 @@ class AuthStateLoggedOut extends AuthState with EquatableMixin {
     required bool isLoading,
     String? loadingText,
   }) : super(
+          /*left side is parent class authstate and right side is subclass AuthStateLoggedOut*/
+
           isLoading: isLoading,
           loadingText: loadingText,
         );
@@ -68,3 +86,19 @@ exception=something with isloading :false exception=null with isloading :true
   @override
   List<Object?> get props => [exception, isLoading];
 }
+
+/*/* 
+🔹 Explanation for revision:
+
+- 'isLoading' variable is declared only once in the parent class (AuthState).
+- All child classes (like AuthStateLoggedIn, AuthStateLoggedOut, etc.)
+  share and use the SAME 'isLoading' variable from the parent — not a new one.
+- In the child constructor, we pass 'isLoading' to the parent using 'super(isLoading: isLoading)'.
+  This means we’re just giving the value to the parent’s variable, not creating a new one.
+- When an object is created:
+    1️⃣ Parent constructor (AuthState) runs first → sets 'isLoading'.
+    2️⃣ Then child constructor runs → sets its own extra variables.
+- This helps all states have a common 'isLoading' property,
+  so UI or Bloc can easily check 'state.isLoading' for any state type.
+*/
+ */

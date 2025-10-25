@@ -11,6 +11,52 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       : super(const AuthStateUninitialized(isLoading: true)) {
     /*event is the instance of the event class that triggered this handler.
     In your case, AuthEventInitiatize() */
+    on<AuthEventShouldRegister>((event, emit) {
+      emit(const AuthStateRegistering(
+        exception: null,
+        isLoading: false,
+      ));
+    });
+
+    on<AuthEventForgotPassword>((event, emit) async {
+      //state where user is just landed
+      emit(const AuthStateForgotPassword(
+        exception: null,
+        hasSentEmail: false,
+        isLoading: false,
+      ));
+
+      final email = event.email;
+
+      if (email == null) {
+        return; // user just want to go to forgotpasword view
+      }
+
+      //user wants to actually send a forgot-password email
+      emit(const AuthStateForgotPassword(
+        exception: null,
+        hasSentEmail: false,
+        isLoading: true,
+      ));
+
+      bool didSendEmial;
+      Exception? exception;
+
+      try {
+        await provider.sendPasswordReset(toEmail: email);
+        didSendEmial = true;
+        exception = null;
+      } on Exception catch (e) {
+        didSendEmial = false;
+        exception = e;
+      }
+
+      emit(AuthStateForgotPassword(
+        exception: exception,
+        hasSentEmail: didSendEmial,
+        isLoading: true,
+      ));
+    });
 
     on<AuthEventSendEmailVerification>((event, emit) async {
       await provider.sendEmailVerification();
@@ -26,6 +72,10 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
           password: password,
         );
         await provider.sendEmailVerification();
+
+        /*it calls the parent (AuthState) constructor and sets isLoading = true/false
+         inside the parent. and emit it*/
+
         emit(
           const AuthStateNeedsVerification(
             isLoading: false,
@@ -176,3 +226,4 @@ BLoC Components & Concepts Cheat Sheet:
    - Represents the “current condition” of the app/UI.
 */
 
+/* */

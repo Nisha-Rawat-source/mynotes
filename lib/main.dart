@@ -6,6 +6,7 @@ import 'package:mynotes/services/auth/bloc/auth_bloc.dart';
 import 'package:mynotes/services/auth/bloc/auth_event.dart';
 import 'package:mynotes/services/auth/bloc/auth_state.dart';
 import 'package:mynotes/services/auth/firebase_auth_provider.dart';
+import 'package:mynotes/views/forgot_password_view.dart';
 import 'package:mynotes/views/login_view.dart';
 import 'package:mynotes/views/notes/create_update_note_view.dart';
 import 'package:mynotes/views/notes/notes_view.dart';
@@ -67,16 +68,28 @@ class HomePage extends StatelessWidget {
     /*BlocBuilder building the ui according to the bloc and bloc(BLoC type and state type specified.) 
     state given in the parameter and bulding it for given contect and state */
     return BlocConsumer<AuthBloc, AuthState>(
+      //sideeffects
+
       listener: (context, state) {
+        /* BlocConsumer listens to AuthBloc state changes.
+   'state' = latest AuthState emitted.
+   If state.isLoading → show loading screen.
+   Else → hide it.
+   Used to control loading UI based on authentication state. */
+
         if (state.isLoading) {
           LoadingScreen().show(
             context: context,
+
+            //if null the execute right;
+
             text: state.loadingText ?? 'please wait a moment',
           );
         } else {
           LoadingScreen().hide();
         }
       },
+      //it is rebulding its ui again everytime it gets the state
       builder: (context, state) {
         if (state is AuthStateLoggedIn) {
           return const NotesView();
@@ -84,6 +97,8 @@ class HomePage extends StatelessWidget {
           return const EmailVerificationView();
         } else if (state is AuthStateLoggedOut) {
           return LoginView();
+        } else if (state is AuthStateForgotPassword) {
+          return const ForgotPasswordView();
         } else if (state is AuthStateRegistering) {
           return const RegisterView();
         } else {
