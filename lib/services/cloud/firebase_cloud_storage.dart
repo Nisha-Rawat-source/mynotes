@@ -34,63 +34,22 @@ class FirebaseCloudStorage {
 /*allNotes() = live stream of notes for a user, automatically updates UI when
  data changes, acts like a cache of current user notes. */
 
-  Stream<Iterable<CloudNote>> allNotes({required String ownerUserId}) =>
-
-      /*notes.snapshots() → returns Stream<QuerySnapshot>
+  Stream<Iterable<CloudNote>> allNotes({required String ownerUserId}) {
+    /*notes.snapshots() → returns Stream<QuerySnapshot>
 Each event emitted by the stream is a QuerySnapshot, i.e., a snapshot of all
  documents at that moment. */
 
-      /*since snapshots is giving stream of list of notes we are using 2 map
+    /*since snapshots is giving stream of list of notes we are using 2 map
  1 for stream other for list of doc */
 
 //docs is List<QueryDocumentSnapshot<Map<String, dynamic>>>
 
-      notes.snapshots().map((event) => event.docs
-          .map((doc) => CloudNote.fromSnapshot(doc))
-          .where((note) => note.ownerUserId == ownerUserId));
+    final allNotes = notes
+        .where(ownerUserIdFieldName, isEqualTo: ownerUserId)
+        .snapshots()
+        .map((event) => event.docs.map((doc) => CloudNote.fromSnapshot(doc)));
 
-  Future<Iterable<CloudNote>> getNotes({required String ownerUserId}) async {
-    try {
-      return await notes
-          /*where is a firestore method it is used to filter the data inside document
-      it returns querysnapshot */
-          .where(
-            ownerUserIdFieldName,
-            isEqualTo: ownerUserId,
-          )
-
-          /*querysnapshot is a container for all the documents returned by a Firestore query.
-          .docs → A list of QueryDocumentSnapshot, i.e., all documents returned by the query. */
-
-          /*get is a Firestore method to fetch the documents once from the database.
-            Returns a QuerySnapshot containing all the documents that match the query.
-            it this case it is fetching data for where()  */
-          .get()
-
-          /*Dart Future method that runs a function after the asynchronous fetch is complete.
-            value = the QuerySnapshot returned by .get().
-            Analogy: Once Firestore returns the data, do this with it. */
-
-          //docs is list of documents returned by a query.
-          //doc A single document inside .docs.
-
-          /*We use docs instead of doc because a query can return multiple
-           documents, so Firestore gives us a list of documents (docs) to 
-           handle all matches; doc is just one item in that list. */
-
-          .then(
-            /* 
-          here, value is the result (QuerySnapshot) returned by get().
-          value.docs = list of all documents returned by the query.
-          For each doc in docs with the help of map(), we convert it into
-          a CloudNote object. Finally, we return an Iterable of CloudNote objects.
-          */
-
-            (value) => value.docs.map((doc) => CloudNote.fromSnapshot(doc)),
-          );
-    } catch (e) {
-      throw CouldNotGetAllNotesException();
-    }
+    return allNotes;
   }
 
   Future<CloudNote> createNewNote({required String ownerUserId}) async {

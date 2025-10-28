@@ -23,7 +23,7 @@ Example:
 If your notes collection has 3 documents,
 you will get 3 QueryDocumentSnapshot objects → one for each document.
 A single Firestore document (snapshot) whose data is in the form of a Map with String keys and values of any type. */
-
+//named constructor
   CloudNote.fromSnapshot(QueryDocumentSnapshot<Map<String, dynamic>> snapshot)
       : documentId = snapshot.id,
         //snapshot here is document and every document have unique id generateed by firebase
