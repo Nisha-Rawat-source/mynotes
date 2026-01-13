@@ -1,6 +1,7 @@
 # mynotes
 
 A new Flutter project.
+this a note taking application where user can create,read,update,delete and share there notes.
 
 ## Getting Started
 
